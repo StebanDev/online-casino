@@ -43,8 +43,6 @@ function Header() {
   const state = useGlobalState()
   const dispatch = useGlobalDispatch()
 
-  console.log('state', state.username)
-
   const onLogin = () => {
     dispatch({ type: ActionTypes.LOGIN_USER, username })
     setIsModalOpen(false)

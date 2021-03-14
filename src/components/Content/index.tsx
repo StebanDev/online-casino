@@ -42,29 +42,6 @@ const columns: GridColDef[] = [
   },
 ]
 
-const rows = [
-  { id: 1, slot1: 2, slot2: 4, slot3: 8, time: '09:00' },
-  { id: 2, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
-  { id: 3, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
-  { id: 4, slot1: 2, slot2: 4, slot3: 8, time: '08:00' },
-  { id: 1, slot1: 2, slot2: 4, slot3: 8, time: '09:00' },
-  { id: 2, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
-  { id: 3, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
-  { id: 4, slot1: 2, slot2: 4, slot3: 8, time: '08:00' },
-  { id: 1, slot1: 2, slot2: 4, slot3: 8, time: '09:00' },
-  { id: 2, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
-  { id: 3, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
-  { id: 4, slot1: 2, slot2: 4, slot3: 8, time: '08:00' },
-  { id: 1, slot1: 2, slot2: 4, slot3: 8, time: '09:00' },
-  { id: 2, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
-  { id: 3, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
-  { id: 4, slot1: 2, slot2: 4, slot3: 8, time: '08:00' },
-  { id: 1, slot1: 2, slot2: 4, slot3: 8, time: '09:00' },
-  { id: 2, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
-  { id: 3, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
-  { id: 4, slot1: 2, slot2: 4, slot3: 8, time: '08:00' },
-]
-
 function Content() {
   const [isModalOpen, setIsModalOpen] = React.useState(false)
   const state = useGlobalState()

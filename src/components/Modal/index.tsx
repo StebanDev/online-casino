@@ -21,6 +21,8 @@ const Slot = styled.div`
   width: 1em;
 `
 
+const generateRandomNumber = () => Math.floor(Math.random() * 9 + 1)
+
 type Props = {
   open: boolean
   onClose: () => void
@@ -34,8 +36,6 @@ function Modal(props: Props) {
   const [slots, setSlots] = React.useState<State>(['?', '?', '?'])
 
   const dispatch = useGlobalDispatch()
-
-  const generateRandomNumber = () => Math.floor(Math.random() * 9 + 1)
 
   const checkEarnings = (slots: number[]) => {
     let earnings = 0
