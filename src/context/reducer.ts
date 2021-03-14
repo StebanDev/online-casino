@@ -27,6 +27,7 @@ export const stateReducer = (state: State, action: Action) => {
       return {
         ...state,
         username: '',
+        balance: 0,
         history: [],
       }
     case ActionTypes.MAKE_SPIN:

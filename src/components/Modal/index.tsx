@@ -15,7 +15,7 @@ import { ActionTypes } from '../../context/reducer'
 const Slot = styled.div`
   border-radius: 8px;
   border: 1px solid gray;
-  margin-right: 1em;
+  margin: 0.5em;
   padding: 1em 2em;
   user-select: none;
   width: 1em;
