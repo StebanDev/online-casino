@@ -1,6 +1,8 @@
+import * as React from 'react'
 import styled from 'styled-components'
 import { DataGrid, GridColDef } from '@material-ui/data-grid'
 import { Box, Button } from '@material-ui/core'
+import { Modal } from '..'
 
 const Container = styled.div`
   display: flex;
@@ -63,10 +65,15 @@ const rows = [
 ]
 
 function Content() {
+  const [isModalOpen, setIsModalOpen] = React.useState(false)
   return (
     <Container>
       <Box marginTop={5} marginBottom={3} textAlign="center">
-        <Button variant="contained" color="primary">
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => setIsModalOpen(true)}
+        >
           Start Game
         </Button>
       </Box>
@@ -79,6 +86,7 @@ function Content() {
           autoHeight
         />
       </Box>
+      <Modal onClose={() => setIsModalOpen(false)} open={isModalOpen} />
     </Container>
   )
 }
