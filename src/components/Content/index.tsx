@@ -44,17 +44,33 @@ const rows = [
   { id: 2, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
   { id: 3, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
   { id: 4, slot1: 2, slot2: 4, slot3: 8, time: '08:00' },
+  { id: 1, slot1: 2, slot2: 4, slot3: 8, time: '09:00' },
+  { id: 2, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
+  { id: 3, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
+  { id: 4, slot1: 2, slot2: 4, slot3: 8, time: '08:00' },
+  { id: 1, slot1: 2, slot2: 4, slot3: 8, time: '09:00' },
+  { id: 2, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
+  { id: 3, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
+  { id: 4, slot1: 2, slot2: 4, slot3: 8, time: '08:00' },
+  { id: 1, slot1: 2, slot2: 4, slot3: 8, time: '09:00' },
+  { id: 2, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
+  { id: 3, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
+  { id: 4, slot1: 2, slot2: 4, slot3: 8, time: '08:00' },
+  { id: 1, slot1: 2, slot2: 4, slot3: 8, time: '09:00' },
+  { id: 2, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
+  { id: 3, slot1: 2, slot2: 4, slot3: 8, time: '10:00' },
+  { id: 4, slot1: 2, slot2: 4, slot3: 8, time: '08:00' },
 ]
 
 function Content() {
   return (
     <Container>
-      <Box marginTop={4} marginBottom={3} textAlign="center">
+      <Box marginTop={5} marginBottom={3} textAlign="center">
         <Button variant="contained" color="primary">
           Start Game
         </Button>
       </Box>
-      <Box width={662} marginX="auto">
+      <Box width={662} marginX="auto" marginBottom={4}>
         <DataGrid
           columns={columns}
           rows={rows}
