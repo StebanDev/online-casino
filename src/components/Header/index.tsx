@@ -17,19 +17,22 @@ const StyledLogo = styled.img`
 
 function Header() {
   return (
-    <AppBar>
-      <Toolbar>
-        <LogoContainer>
-          <a href="/">
-            <StyledLogo src={logo} />
-          </a>
-        </LogoContainer>
-        <Box display="flex" alignItems="center">
-          <Typography>Balance: $10.00</Typography>
-          <StyledAvatar>EC</StyledAvatar>
-        </Box>
-      </Toolbar>
-    </AppBar>
+    <>
+      <AppBar>
+        <Toolbar>
+          <LogoContainer>
+            <a href="/">
+              <StyledLogo src={logo} />
+            </a>
+          </LogoContainer>
+          <Box display="flex" alignItems="center">
+            <Typography>Balance: $10.00</Typography>
+            <StyledAvatar>EC</StyledAvatar>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <Toolbar />
+    </>
   )
 }
 
