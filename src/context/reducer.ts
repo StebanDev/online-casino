@@ -5,12 +5,16 @@ export enum ActionTypes {
   LOGIN_USER,
   LOGOUT_USER,
   MAKE_SPIN,
+  INCREMENT_BALANCE,
+  DECREMENT_BALANCE,
 }
 
 export type Action =
   | { type: ActionTypes.LOGIN_USER; username: string }
   | { type: ActionTypes.LOGOUT_USER }
   | { type: ActionTypes.MAKE_SPIN; numbers: number[] }
+  | { type: ActionTypes.INCREMENT_BALANCE; value: number }
+  | { type: ActionTypes.DECREMENT_BALANCE; value: number }
 
 export const stateReducer = (state: State, action: Action) => {
   switch (action.type) {
@@ -38,6 +42,16 @@ export const stateReducer = (state: State, action: Action) => {
             time: new Date().toLocaleString(),
           },
         ],
+      }
+    case ActionTypes.INCREMENT_BALANCE:
+      return {
+        ...state,
+        balance: state.balance + action.value,
+      }
+    case ActionTypes.DECREMENT_BALANCE:
+      return {
+        ...state,
+        balance: state.balance - action.value,
       }
     default:
       throw new Error(`Unhandled action type: ${(action as Action).type}`)

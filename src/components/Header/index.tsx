@@ -33,6 +33,7 @@ const StyledLogo = styled.img`
 const StyledButton = styled(Button)`
   border-color: white;
   color: white;
+  margin-left: 1em;
 `
 
 function Header() {
@@ -70,20 +71,22 @@ function Header() {
               <StyledLogo src={logo} />
             </a>
           </LogoContainer>
-          {state.username ? (
-            <Box display="flex" alignItems="center">
-              <Typography>Balance: ${state.balance.toFixed(2)}</Typography>
-              <StyledAvatar>{avatarString}</StyledAvatar>
-              <StyledButton onClick={onLogout}>Log out</StyledButton>
-            </Box>
-          ) : (
-            <StyledButton
-              variant="outlined"
-              onClick={() => setIsModalOpen(true)}
-            >
-              Login
-            </StyledButton>
-          )}
+          <Box display="flex" alignItems="center">
+            <Typography>Balance: ${state.balance.toFixed(2)}</Typography>
+            {state.username ? (
+              <>
+                <StyledAvatar>{avatarString}</StyledAvatar>
+                <StyledButton onClick={onLogout}>Log out</StyledButton>
+              </>
+            ) : (
+              <StyledButton
+                variant="outlined"
+                onClick={() => setIsModalOpen(true)}
+              >
+                Login
+              </StyledButton>
+            )}
+          </Box>
         </Toolbar>
       </AppBar>
       <Toolbar />

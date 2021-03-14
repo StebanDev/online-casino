@@ -37,9 +37,24 @@ function Modal(props: Props) {
 
   const generateRandomNumber = () => Math.floor(Math.random() * 9 + 1)
 
+  const checkEarnings = (slots: number[]) => {
+    let earnings = 0
+    const number = slots.join('')
+    if (number === '777') {
+      earnings = 10
+    } else if (number === '112' || number === '122') {
+      earnings = 0.5
+    } else if (number === number[0].repeat(3)) {
+      earnings = 5
+    }
+    earnings &&
+      dispatch({ type: ActionTypes.INCREMENT_BALANCE, value: earnings })
+  }
+
   const updateSlots = (newSlots: number[]) => {
     setSlots(newSlots)
     dispatch({ type: ActionTypes.MAKE_SPIN, numbers: newSlots })
+    checkEarnings(newSlots)
   }
 
   const onSpin = () => {
@@ -49,6 +64,7 @@ function Modal(props: Props) {
       generateRandomNumber(),
     ]
     updateSlots(newSlots)
+    dispatch({ type: ActionTypes.DECREMENT_BALANCE, value: 1 })
   }
 
   const onDebug = () => {
