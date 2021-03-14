@@ -72,7 +72,7 @@ function Header() {
           </LogoContainer>
           {state.username ? (
             <Box display="flex" alignItems="center">
-              <Typography>Balance: $0.00</Typography>
+              <Typography>Balance: ${state.balance.toFixed(2)}</Typography>
               <StyledAvatar>{avatarString}</StyledAvatar>
               <StyledButton onClick={onLogout}>Log out</StyledButton>
             </Box>

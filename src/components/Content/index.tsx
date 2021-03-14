@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { DataGrid, GridColDef } from '@material-ui/data-grid'
 import { Box, Button } from '@material-ui/core'
 import { Modal } from '..'
+import { useGlobalState } from '../../context'
 
 const Container = styled.div`
   display: flex;
@@ -66,6 +67,8 @@ const rows = [
 
 function Content() {
   const [isModalOpen, setIsModalOpen] = React.useState(false)
+  const state = useGlobalState()
+
   return (
     <Container>
       <Box marginTop={5} marginBottom={3} textAlign="center">
@@ -80,7 +83,7 @@ function Content() {
       <Box width={662} marginX="auto" marginBottom={4}>
         <DataGrid
           columns={columns}
-          rows={rows}
+          rows={state.history}
           hideFooter
           disableColumnMenu
           autoHeight

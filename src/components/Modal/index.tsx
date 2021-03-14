@@ -9,6 +9,8 @@ import {
   Typography,
 } from '@material-ui/core'
 import styled from 'styled-components'
+import { useGlobalDispatch } from '../../context'
+import { ActionTypes } from '../../context/reducer'
 
 const Slot = styled.div`
   border-radius: 8px;
@@ -31,14 +33,26 @@ function Modal(props: Props) {
 
   const [slots, setSlots] = React.useState<State>(['?', '?', '?'])
 
+  const dispatch = useGlobalDispatch()
+
   const generateRandomNumber = () => Math.floor(Math.random() * 9 + 1)
 
+  const updateSlots = (newSlots: number[]) => {
+    setSlots(newSlots)
+    dispatch({ type: ActionTypes.MAKE_SPIN, numbers: newSlots })
+  }
+
   const onSpin = () => {
-    setSlots([
+    const newSlots = [
       generateRandomNumber(),
       generateRandomNumber(),
       generateRandomNumber(),
-    ])
+    ]
+    updateSlots(newSlots)
+  }
+
+  const onDebug = () => {
+    updateSlots([7, 7, 7])
   }
 
   return (
@@ -59,7 +73,7 @@ function Modal(props: Props) {
       </DialogContent>
       <DialogActions>
         <Button onClick={onSpin}>Spin</Button>
-        <Button>Debug</Button>
+        <Button onClick={onDebug}>Debug</Button>
         <Button onClick={onClose}>Close</Button>
       </DialogActions>
     </Dialog>
