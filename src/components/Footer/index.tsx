@@ -1,4 +1,4 @@
-import { AppBar, Box, Toolbar, Typography } from '@material-ui/core'
+import { AppBar, Toolbar, Typography } from '@material-ui/core'
 import styled from 'styled-components'
 
 const StyledAppbar = styled(AppBar)`
