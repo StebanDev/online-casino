@@ -18,11 +18,10 @@ interface IContextProps {
   dispatch: (action: Action) => void
 }
 
-const GlobalStateContext = React.createContext({} as IContextProps)
+const StateContext = React.createContext({} as IContextProps)
 
-export const useGlobalState = () => React.useContext(GlobalStateContext).state
-export const useGlobalDispatch = () =>
-  React.useContext(GlobalStateContext).dispatch
+export const useGlobalState = () => React.useContext(StateContext).state
+export const useGlobalDispatch = () => React.useContext(StateContext).dispatch
 
 const initializer = localStorage.getItem('state')
   ? JSON.parse(localStorage.getItem('state')!)
@@ -36,8 +35,8 @@ export const StateProvider = ({ children }: { children: React.ReactNode }) => {
   }, [state])
 
   return (
-    <GlobalStateContext.Provider value={{ state, dispatch }}>
+    <StateContext.Provider value={{ state, dispatch }}>
       {children}
-    </GlobalStateContext.Provider>
+    </StateContext.Provider>
   )
 }
