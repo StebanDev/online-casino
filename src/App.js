@@ -1,6 +1,7 @@
 import { Container } from '@material-ui/core'
 import styled from 'styled-components'
 import { Content, Footer, Header } from './components'
+import { StateProvider } from './context'
 
 const FlexContainer = styled.div`
   display: flex;
@@ -10,13 +11,15 @@ const FlexContainer = styled.div`
 
 function App() {
   return (
-    <Container>
-      <FlexContainer>
-        <Header />
-        <Content />
-        <Footer />
-      </FlexContainer>
-    </Container>
+    <StateProvider>
+      <Container>
+        <FlexContainer>
+          <Header />
+          <Content />
+          <Footer />
+        </FlexContainer>
+      </Container>
+    </StateProvider>
   )
 }
 
